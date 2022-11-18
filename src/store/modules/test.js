@@ -34,7 +34,7 @@ export default {
         async fetchTestsName({ commit }) {
             try {
                 const testsName = await axios({
-                    url: `http://localhost:3000/api/tests`,
+                    url: `http://127.0.0.1:3000/api/tests`,
                     method: 'get',
                 });
                 if (testsName.data) {
@@ -52,7 +52,7 @@ export default {
             try {
                 const searchName = encrypt(name);
                 const test = await axios({
-                    url: `http://localhost:3000/api/tests/${searchName}`,
+                    url: `http://127.0.0.1:3000/api/tests/${searchName}`,
                     method: 'get',
                 });
                 if (test.data) {
