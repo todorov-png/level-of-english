@@ -39,7 +39,7 @@ export default {
     margin: 20px 30px;
     border-radius: 20px;
     text-align: center;
-    background-color: lightblue;
+    background-color: #DDC5A2;
     overflow: hidden;
     &-wrap {
         height: 100%;
@@ -52,7 +52,7 @@ export default {
         line-height: 130%;
         margin: 0;
         padding: 5px;
-        background-color: navy;
+        background-color: #785A46;
         color: white;
     }
 }

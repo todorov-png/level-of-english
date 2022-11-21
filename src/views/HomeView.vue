@@ -50,7 +50,7 @@ h2 {
             border-bottom: none;
         }
         &:hover {
-            background-color: darkturquoise;
+            background-color: #DDC5A2;
         }
         p {
             display: flex;

@@ -48,7 +48,7 @@
     }
     &__close {
       margin: 0 auto;
-      color: #16A4FF;
+      color: #AF4425;
       background: none;
       border: none;
       cursor: pointer;

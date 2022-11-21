@@ -34,7 +34,7 @@ export default {
 
 <style scoped lang="scss">
 header {
-    background-color: #000080;
+    background-color: #805A3D;
     flex: 0 0 auto;
     & > div {
         display: flex;

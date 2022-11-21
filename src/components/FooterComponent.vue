@@ -20,7 +20,7 @@ export default {
 
 <style scoped lang="scss">
 footer {
-    background-color: #000080;
+    background-color:#785A46;
     flex: 0 0 auto;
     & > div {
         display: flex;

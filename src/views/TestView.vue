@@ -173,17 +173,17 @@ button {
     appearance: none;
     border: 0;
     border-radius: 5px;
-    background: #4676d7;
+    background: #DDC5A2;
     color: #fff;
     padding: 8px 16px;
     font-size: 1rem;
     cursor: pointer;
     &:hover {
-        background: #1d49aa;
+        background: #301B28;
     }
     &:focus {
         outline: none;
-        box-shadow: 0 0 0 4px #cbd6ee;
+        box-shadow: 0 0 0 4px #301B28;
     }
 }
 </style>

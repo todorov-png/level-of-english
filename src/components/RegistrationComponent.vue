@@ -100,11 +100,11 @@ input {
         border: none;
     }
     &__transition {
-        color: navy;
+        color: #785A46;
         background-color: transparent;
     }
     &__action {
-        background-color: navy;
+        background-color: #785A46;
         border-radius: 10px;
         color: white;
         padding: 10px 15px;

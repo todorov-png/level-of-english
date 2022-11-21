@@ -76,7 +76,7 @@ h2 {
             outline: none;
             margin: 0 auto;
             color: white;
-            background: #0d8aee;
+            background: #301B28;
             padding: 10px 15px;
             border-radius: 10px;
             &:hover {

@@ -65,7 +65,7 @@ html {
 body {
     height: 100%;
     margin: 0;
-    background-image: radial-gradient(#5b4ffc, #df02cd);
+    background-image: radial-gradient( #DDC5A2, #301B28);
     &.no-scroll-ios {
         height: 100%;
         width: 100%;
@@ -94,7 +94,7 @@ body {
 .content {
     height: 100%;
     padding: 20px;
-    background-color: lightblue;
+    background-color: #f4ebdb;
 }
 .scroll {
     overflow: auto;
