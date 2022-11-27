@@ -18,9 +18,6 @@ export default {
         getTestQuestions(state) {
             return state.test.questions ? state.test.questions : [];
         },
-        // getTest(state) {
-        //     return state.test;
-        // },
     },
     mutations: {
         setTest(state, test) {
@@ -34,7 +31,7 @@ export default {
         async fetchTestsName({ commit }) {
             try {
                 const testsName = await axios({
-                    url: `http://127.0.0.1:3000/api/tests`,
+                    url: `${process.env.VUE_APP_BASE_URL}:${process.env.VUE_APP_SERVER_PORT}/api/tests`,
                     method: 'get',
                 });
                 if (testsName.data) {
@@ -52,7 +49,7 @@ export default {
             try {
                 const searchName = encrypt(name);
                 const test = await axios({
-                    url: `http://127.0.0.1:3000/api/tests/${searchName}`,
+                    url: `${process.env.VUE_APP_BASE_URL}:${process.env.VUE_APP_SERVER_PORT}/api/tests/${searchName}`,
                     method: 'get',
                 });
                 if (test.data) {

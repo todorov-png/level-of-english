@@ -25,12 +25,12 @@ export default {
             try {
                 const token = encrypt(user.email);
                 const foundUser = await axios({
-                    url: `http://127.0.0.1:3000/api/users/${token}`,
+                    url: `${process.env.VUE_APP_BASE_URL}:${process.env.VUE_APP_SERVER_PORT}/api/users/${token}`,
                     method: 'get',
                 });
                 if (foundUser.data) throw { message: 'User with this email is already registered!' };
                 await axios({
-                    url: 'http://127.0.0.1:3000/api/users/create',
+                    url: `${process.env.VUE_APP_BASE_URL}:${process.env.VUE_APP_SERVER_PORT}/api/users/create`,
                     method: 'post',
                     data: {
                         data: encrypt({
@@ -58,7 +58,7 @@ export default {
         async authUser({ commit }, data) {
             try {
                 const user = await axios({
-                    url: 'http://127.0.0.1:3000/api/users/auth',
+                    url: `${process.env.VUE_APP_BASE_URL}:${process.env.VUE_APP_SERVER_PORT}/api/users/auth`,
                     method: 'post',
                     data: { data: encrypt(data) },
                 });
@@ -82,7 +82,7 @@ export default {
             if (!userToken) return false;
             try {
                 const user = await axios({
-                    url: `http://127.0.0.1:3000/api/users/${userToken}`,
+                    url: `${process.env.VUE_APP_BASE_URL}:${process.env.VUE_APP_SERVER_PORT}/api/users/${userToken}`,
                     method: 'get',
                 });
                 commit('setUser', user.data);
@@ -93,7 +93,7 @@ export default {
         async updateUser({ commit }, user) {
             try {
                 await axios({
-                    url: `http://127.0.0.1:3000/api/users/${user.token}`,
+                    url: `${process.env.VUE_APP_BASE_URL}:${process.env.VUE_APP_SERVER_PORT}/api/users/${user.token}`,
                     method: 'put',
                     data: { data: encrypt(user) },
                 });

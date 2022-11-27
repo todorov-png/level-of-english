@@ -6,22 +6,24 @@ import path, { join } from 'path';
 import { fileURLToPath } from 'url';
 import usersRouter from './routes/users.js';
 import testsRouter from './routes/tests.js';
+import * as env from 'dotenv';
+env.config()
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.set('port', 3000);
+app.set('port', process.env.VUE_APP_SERVER_PORT);
 
 app.listen(app.get('port'), () => {
-    console.log(`[OK] Server is running on http://127.0.0.1:${app.get('port')}`);
+    console.log(`[OK] Server is running on ${process.env.VUE_APP_BASE_URL}:${app.get('port')}`);
 });
 
-connect('mongodb://127.0.0.1:27017/level-of-english', { useNewUrlParser: true })
+connect(process.env.MONGO_BD, { useNewUrlParser: true })
     .then(db => console.log('[OK] DB is connected'))
     .catch(err => console.error(err));
 
-app.use(cors({ origin: 'http://127.0.0.1:8080' }));
+app.use(cors({ origin: `${process.env.VUE_APP_BASE_URL}:${process.env.VUE_PORT}` }));
 app.use(json());
 app.use(urlencoded({ extended: false }));
 app.use(morgan('dev'));

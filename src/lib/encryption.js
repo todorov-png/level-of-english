@@ -1,16 +1,16 @@
 import { Buffer } from 'buffer';
 
 function atob(str) {
-  return Buffer.from(str, 'base64').toString('binary');
+    return Buffer.from(str, 'base64').toString('binary');
 }
 
 function btoa(str) {
-  return Buffer.from(str, 'binary').toString('base64');
+    return Buffer.from(str, 'binary').toString('base64');
 }
 
 export function encrypt(data) {
     const dataStr = JSON.stringify(data);
-    const abc = process.env.VUE_APP_SECRET_KEY;
+    const abc = 'asdfghjklpoiuytrewqzxcvbnm123456789QWERTYUIOPLKJHGFDSAZXCVBNM';
     let str = '';
     while (str.length < 12) {
         str += abc[Math.floor(Math.random() * abc.length)];
